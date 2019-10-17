@@ -1,4 +1,4 @@
-node('docker') {  
+node {  
   stage('SCM') {
       checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: 'refs/heads/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/freitasvazthiago/react-list.git']]]
     }
