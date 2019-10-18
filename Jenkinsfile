@@ -3,7 +3,7 @@ node {
       checkout poll: false, scm: [$class: 'GitSCM', branches: [[name: 'refs/heads/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/freitasvazthiago/react-list.git']]]
     }
     stage('SonarQube Analysis') {
-          sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.projectName=react-list -Dsonar.projectVersion=1.0 -Dsonar.projectKey=react-list:app -Dsonar.sources=. -Dsonar.projectBaseDir=/home/jenkins/workspace/sonar-pipeline"
+          sh "/var/jenkins_home/sonar-scanner/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner -Dsonar.host.url=127.0.0.1:9000 -Dsonar.projectName=react-list -Dsonar.projectVersion=1.0 -Dsonar.projectKey=react-list:app -Dsonar.sources=. -Dsonar.projectBaseDir=/home/jenkins/workspace/sonar-pipeline"
     }
 }
 
